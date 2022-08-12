@@ -1,0 +1,30 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1660334381806' stop='1660334439301'>
+    <name>Deel Homepage </name>
+    <title>Deel Homepage </title>
+    <test-cases>
+        <test-case start='1660334381806' status='broken' stop='1660334439301'>
+            <name>Create a contract as Milestone</name>
+            <title>Create a contract as Milestone</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-104.0.5112.81'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Can't call setValue on element with selector "//input[@name='rate']" because element wasn't found</message>
+                <stack-trace>Error: Can't call setValue on element with selector "//input[@name='rate']" because element wasn't found
+                    at implicitWait (C:\Users\ccarl\deel-test\node_modules\webdriverio\build\utils\implicitWait.js:34:19)
+                    at async Element.elementErrorHandlerCallbackFn (C:\Users\ccarl\deel-test\node_modules\webdriverio\build\middlewares.js:20:29)
+                    at async Element.wrapCommandFn (C:\Users\ccarl\deel-test\node_modules\@wdio\utils\build\shim.js:137:29)
+                    at async CreatePage.createContract (C:\Users\ccarl\deel-test\test\pageobjects\create.page.js:177:9)
+                    at async Context.&lt;anonymous> (C:\Users\ccarl\deel-test\test\specs\deel_test_contract_milestone.js:15:9)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

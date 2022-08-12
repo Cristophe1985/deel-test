@@ -52,6 +52,8 @@ class CreatePage extends Page {
         return $("//input[@name='effectiveDate']");
     }
 
+    /****** For fixed rate ******/
+
     // Currency
     get contractCurrency () {
         return $("//input[@id='react-select-5-input']");
@@ -65,6 +67,27 @@ class CreatePage extends Page {
     // Payment frequency
     get contractPaymentFrequency () {
         return $("//input[@id='react-select-6-input']");
+    }
+
+    /****** For milestone ******/
+
+    get contractMilestoneCurrency () {
+        return $("//div[@data-qa='currency-select']/div/div[1]/div[2]/div/input");
+    }
+
+    // Milestone name
+    get contractMilestoneName () {
+        return $("//input[@data-qa='milestone-title']");
+    }
+
+    // Milestone description
+    get contractMilestoneDescription () {
+        return $("//textarea[@name='description']");
+    }
+
+    // Milestone amount
+    get contractMilestoneAmount () {
+        return $("//input[@data-qa='milestone-amount']");
     }
 
     get btnNextSubmitDiv () {
@@ -91,7 +114,7 @@ class CreatePage extends Page {
         return $("//h1[@class='deel-ui__typography__heading_1']");
     }
     
-    async createContract (type, name, taxResidence, taxResidenceProvince, jobTitle, seniorityLevel, scopeWork, currency, paymentRate, paymentFrequency, specialClause) {
+    async createContract (type, name, taxResidence, taxResidenceProvince, jobTitle, seniorityLevel, scopeWork, currency, paymentRate, paymentFrequency, milestoneName, milestoneDescription, milestoneAmount, specialClause) {
         var formTitle = "";
 
         switch (type) {
@@ -168,25 +191,52 @@ class CreatePage extends Page {
         await this.btnNextSubmitDiv.click();
 
         console.log('*** Page 2 ***');
-        
-        await browser.pause(500);
-        await this.contractCurrency.setValue(currency);
-        browser.keys("\uE007"); 
 
-        await browser.pause(500);
-        await this.contractPaymentRate.setValue(paymentRate);
-        
-        await browser.pause(500);
-        await this.contractPaymentFrequency.setValue(paymentFrequency);
-        browser.keys("\uE007"); 
+        if (type == "Milestone") {
+            await browser.pause(500);
+            await this.contractMilestoneCurrency.setValue(currency);
+            browser.keys("\uE007");
 
-        await browser.pause(500);
-        await this.btnNextSubmitDiv.click();
+            await browser.pause(500);
+            await this.contractMilestoneName.setValue(milestoneName);
+
+            await browser.pause(500);
+            await this.contractMilestoneDescription.setValue(milestoneDescription);
+
+            await browser.pause(500);
+            await this.contractMilestoneAmount.setValue(milestoneAmount);
+
+            await browser.pause(500);
+            await this.btnNextSubmitDiv.click();
+        }
+
+        else {
+            await browser.pause(500);
+            await this.contractCurrency.setValue(currency);
+            browser.keys("\uE007");
+
+            await browser.pause(500);
+            await this.contractPaymentRate.setValue(paymentRate);
+
+            await browser.pause(500);
+            await this.contractPaymentFrequency.setValue(paymentFrequency);
+            browser.keys("\uE007");
+
+            await browser.pause(500);
+            await this.btnNextSubmitDiv.click();
+        }
 
         console.log('*** Page 3 ***');
 
-        await browser.pause(1500);
-        await this.btnNextSubmitSpan.click();
+        if (type == "Pay As You Go") {
+            await browser.pause(500);
+            await this.btnNextSubmitDiv.click();
+        }
+
+        else if (type == "Fixed rate") {
+            await browser.pause(1500);
+            await this.btnNextSubmitSpan.click();
+        }
 
         console.log('*** Page 4 ***');
 

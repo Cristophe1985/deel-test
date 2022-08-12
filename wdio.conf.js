@@ -22,6 +22,17 @@ exports.config = {
     specs: [
         './test/specs/*.js'
     ],
+    // Suits for deel contract types
+    suites: {
+        fixed_rate: [
+            './test/specs/deel_test_contract_fixed_rate.js'
+        ],
+    milestone: [
+        './test/specs/deel_test_contract_milestone.js'
+    ],
+    pay_as_you_go: [
+        './test/specs/deel_test_contract_pay_as_you_go.js'
+    ]},
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'

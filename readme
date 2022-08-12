@@ -1,0 +1,41 @@
+# DEEL TEST for Creating Contracts #
+
+*** IMPORTANT: Before you run these tests, is necesary to bypass login human check by deactivating CAPTCHA system. ***
+
+This repo contains all stuff necesary to create Fixed rate, Milestone and Pay As You Go contracts with the required data.
+
+In order to change contract data, you can edit 'CreatePage.createContract()' method in:
+
+* test/specs/deel_test_contract_fixed_rate.js
+* test/specs/deel_test_contract_milestone.js
+* test/specs/deel_test_contract_pay_as_you_go.js
+
+By setting parameters for:
+- type
+- name
+- taxResidence
+- taxResidenceProvince
+- jobTitle
+- seniorityLevel
+- scopeWork
+- currency
+- paymentRate
+- paymentFrequency
+- milestoneName
+- milestoneDescription
+- milestoneAmount
+- specialClause
+
+Every single spec has his own suite, in order to execute them use:
+
+* npx wdio wdio.conf.js --suite fixed_rate
+* npx wdio wdio.conf.js --suite milestone
+* npx wdio wdio.conf.js --suite pay_as_you_go
+
+To execute them all at once (multi-threading) please use:
+
+* npx wdio wdio.conf.js --suite fixed_rate --suite milestone --suite pay_as_you_go
+
+Questions? feel free to write at ccmwork@gmail.com (Cristophe Carlier)
+
+Good Luck!

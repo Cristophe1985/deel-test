@@ -36,7 +36,7 @@ class LoginPage extends Page {
         console.log('*******************************************************************');
         console.log('****** PLEASE SOLVE RE-CAPTCHA MANUALLY IN ORDER TO CONTINUE ******');
         console.log('*******************************************************************');
-        await browser.pause(10000);
+        await browser.pause(30000);
     }
 
     /**

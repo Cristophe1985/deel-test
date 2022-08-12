@@ -1,0 +1,32 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1660334162701' stop='1660334189471'>
+    <name>Deel Homepage </name>
+    <title>Deel Homepage </title>
+    <test-cases>
+        <test-case start='1660334162702' status='failed' stop='1660334189471'>
+            <name>Create a contract as Fixed Rate</name>
+            <title>Create a contract as Fixed Rate</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-2'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-104.0.5112.81'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Expect $(`//*[contains(@data-qa, 'heading')]`) to be existing
+                
+                Expected: "existing"
+                Received: "not existing"</message>
+                <stack-trace>Error: Expect $(`//*[contains(@data-qa, 'heading')]`) to be existing
+                
+                Expected: "existing"
+                Received: "not existing"
+                    at Context.&lt;anonymous> (C:\Users\ccarl\deel-test\test\specs\deel_test_contract_pay_as_you_go.js:10:46)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>
