@@ -1,0 +1,34 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1660327768806' stop='1660327798217'>
+    <name>Deel Homepage </name>
+    <title>Deel Homepage </title>
+    <test-cases>
+        <test-case start='1660327768806' status='broken' stop='1660327798216'>
+            <name>Create a contract as Fixed Rate</name>
+            <title>Create a contract as Fixed Rate</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-104.0.5112.81'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>javascript error: element.clearElement is not a function
+                  (Session info: chrome=104.0.5112.81)</message>
+                <stack-trace>javascript error: javascript error: element.clearElement is not a function
+                  (Session info: chrome=104.0.5112.81)
+                    at getErrorFromResponseBody (C:\Users\ccarl\deel-test\node_modules\webdriver\build\utils.js:198:12)
+                    at NodeJSRequest._request (C:\Users\ccarl\deel-test\node_modules\webdriver\build\request\index.js:166:60)
+                    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+                    at async Browser.wrapCommandFn (C:\Users\ccarl\deel-test\node_modules\@wdio\utils\build\shim.js:137:29)
+                    at async Browser.wrapCommandFn (C:\Users\ccarl\deel-test\node_modules\@wdio\utils\build\shim.js:137:29)
+                    at async CreatePage.createContract (C:\Users\ccarl\deel-test\test\pageobjects\create.page.js:145:9)
+                    at async Context.&lt;anonymous> (C:\Users\ccarl\deel-test\test\specs\deel_test_contract_fixed_rate.js:15:9)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

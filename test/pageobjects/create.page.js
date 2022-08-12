@@ -141,12 +141,30 @@ class CreatePage extends Page {
 
         await browser.pause(500);
         await this.contractScopeWork.setValue(scopeWork);
-                    
-        // await browser.pause(500);
-        // await this.contractorStartDate.setValue("8/9/2022");
-        // browser.keys("\uE007"); 
 
-        await browser.pause(2500);
+        const today = new Date();
+        const day = today.getDate() - 1;
+        const month = today.toLocaleString('en-US', {month: 'short'});
+        const year = today.getFullYear();
+
+        const todayDate = month + " " + day + ', ' + year;
+        console.log('Today date: ', todayDate);
+
+        await browser.execute(() => {
+              const element = document.querySelector('[name="effectiveDate"]');
+              element.removeAttribute("readonly");
+        });
+
+        await this.contractorStartDate.doubleClick();
+        await browser.pause(250);
+
+        browser.keys(['Control', 'a']);
+        await browser.pause(250);
+
+        browser.keys("Delete");
+        await this.contractorStartDate.setValue(todayDate);
+
+        await browser.pause(500);
         await this.btnNextSubmitDiv.click();
 
         console.log('*** Page 2 ***');
@@ -162,12 +180,12 @@ class CreatePage extends Page {
         await this.contractPaymentFrequency.setValue(paymentFrequency);
         browser.keys("\uE007"); 
 
-        await browser.pause(2500);
+        await browser.pause(500);
         await this.btnNextSubmitDiv.click();
 
         console.log('*** Page 3 ***');
 
-        await browser.pause(2500);
+        await browser.pause(1500);
         await this.btnNextSubmitSpan.click();
 
         console.log('*** Page 4 ***');
@@ -178,12 +196,12 @@ class CreatePage extends Page {
         await browser.pause(500);
         await this.addSpecialClauseTextArea.setValue(specialClause);
         
-        await browser.pause(2500);
+        await browser.pause(500);
         await this.btnNextSubmitDiv.click();
 
         console.log('*** Page 5 ***');
 
-        await browser.pause(2500);
+        await browser.pause(500);
         await this.createContractSubmit.click();
 
         console.log('*** Validate Contract has been Created! ***');

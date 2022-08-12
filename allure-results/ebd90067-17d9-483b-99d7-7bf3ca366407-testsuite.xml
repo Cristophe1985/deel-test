@@ -1,0 +1,37 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1660329332715' stop='1660329386592'>
+    <name>Deel Homepage </name>
+    <title>Deel Homepage </title>
+    <test-cases>
+        <test-case start='1660329332716' status='broken' stop='1660329386591'>
+            <name>Create a contract as Fixed Rate</name>
+            <title>Create a contract as Fixed Rate</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-104.0.5112.81'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>element click intercepted: Element &lt;button class="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButtonBase-root Mui-disabled  css-16ln7kd" tabindex="-1" type="button" disabled="">...&lt;/button> is not clickable at point (762, 678). Other element would receive the click: &lt;div class="deel-ui__stack deel-ui__stack_vertical deel-ui__stack_with-spacing text-left" style="max-width: 512px; margin: auto; gap: 24px;">...&lt;/div>
+                  (Session info: chrome=104.0.5112.81)</message>
+                <stack-trace>element click intercepted: element click intercepted: Element &lt;button class="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButtonBase-root Mui-disabled  css-16ln7kd" tabindex="-1" type="button" disabled="">...&lt;/button> is not clickable at point (762, 678). Other element would receive the click: &lt;div class="deel-ui__stack deel-ui__stack_vertical deel-ui__stack_with-spacing text-left" style="max-width: 512px; margin: auto; gap: 24px;">...&lt;/div>
+                  (Session info: chrome=104.0.5112.81)
+                    at getErrorFromResponseBody (C:\Users\ccarl\deel-test\node_modules\webdriver\build\utils.js:198:12)
+                    at NodeJSRequest._request (C:\Users\ccarl\deel-test\node_modules\webdriver\build\request\index.js:166:60)
+                    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+                    at async Element.wrapCommandFn (C:\Users\ccarl\deel-test\node_modules\@wdio\utils\build\shim.js:137:29)
+                    at async Element.wrapCommandFn (C:\Users\ccarl\deel-test\node_modules\@wdio\utils\build\shim.js:137:29)
+                    at async Element.elementErrorHandlerCallbackFn (C:\Users\ccarl\deel-test\node_modules\webdriverio\build\middlewares.js:24:32)
+                    at async Element.wrapCommandFn (C:\Users\ccarl\deel-test\node_modules\@wdio\utils\build\shim.js:137:29)
+                    at async Element.wrapCommandFn (C:\Users\ccarl\deel-test\node_modules\@wdio\utils\build\shim.js:137:29)
+                    at async Element.elementErrorHandlerCallbackFn (C:\Users\ccarl\deel-test\node_modules\webdriverio\build\middlewares.js:24:32)
+                    at async Element.wrapCommandFn (C:\Users\ccarl\deel-test\node_modules\@wdio\utils\build\shim.js:137:29)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>
